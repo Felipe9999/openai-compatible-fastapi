@@ -1,4 +1,4 @@
-Forked from https://github.com/ritun16/openai-compatible-fastapi
+Forked from https://github.com/ritun16/openai-compatible-fastapi for personal use but if you find it useful go ahead. Support and bugfixes not guaranteed.
 
 # 🚀 Building an OpenAI-Compatible API with Open-Source LLM: Rate-Limiting, Custom API Keys 🔐, and Streamlit Authentication 🌐
 
