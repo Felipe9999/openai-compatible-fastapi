@@ -1,0 +1,6 @@
+@echo off
+echo Activating virtual environment...
+call "%~dp0.venv\Scripts\activate"
+echo Starting FastAPI backend...
+uvicorn serving:app --reload --port 8000
+pause

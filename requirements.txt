@@ -1,9 +1,7 @@
 openai
 streamlit
-azure-core
-azure-communication-email
-vllm
-transformers
+httpx
+python-dotenv
 fastapi
 nest-asyncio
 pyngrok

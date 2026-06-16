@@ -1,6 +1,8 @@
+Forked from https://github.com/ritun16/openai-compatible-fastapi
+
 # 🚀 Building an OpenAI-Compatible API with Open-Source LLM: Rate-Limiting, Custom API Keys 🔐, and Streamlit Authentication 🌐
 
-Welcome to the **OpenAI-Compatible API with Open-Source LLMs** repository! This project provides a comprehensive guide and implementation for building your own API service using open-source Large Language Models (LLMs). The API is designed to be compatible with the OpenAI API, and includes features such as **rate limiting**, **custom API keys** for authentication, and a **Streamlit-based** authentication system using Azure email communication.
+Welcome to the **OpenAI-Compatible API with Open-Source LLMs** repository! This project provides a comprehensive guide and implementation for building your own API service using open-source Large Language Models (LLMs). The API is designed to be compatible with the OpenAI API, and includes features such as **rate limiting**, **custom API keys** for authentication, and a **Streamlit-based** authentication system using local email and password.
 
 ---
 
@@ -9,7 +11,7 @@ Welcome to the **OpenAI-Compatible API with Open-Source LLMs** repository! This 
 - **OpenAI-Compatible API**: Fully aligned with OpenAI’s `chat/completions` route for seamless integration.
 - **Secure API Key Management**: Use the Streamlit app to create, manage, and delete API keys.
 - **Rate Limiting**: Prevents abuse and ensures fair usage through a custom rate-limiting system.
-- **Azure Email Authentication**: Implements a simple email-based authentication using Azure Communication Services for sending OTPs.
+- **Local Email Authentication**: Implements a simple email and password registration/login flow.
 - **FastAPI for LLM Serving**: Serve open-source LLMs using `FastAPI`, with model serving by `vLLM` for efficient, paged attention mechanism.
 
 ---
@@ -19,7 +21,7 @@ Welcome to the **OpenAI-Compatible API with Open-Source LLMs** repository! This 
 - **.env**: Stores environment variables.
 - **api_key_backend.py**: Manages API key creation, deletion, and database integration.
 - **app.py**: Streamlit app for user login, logout, and API key management.
-- **auths.py**: Implements email-based authentication, OTP validation, and session management.
+- **auths.py**: Implements email and password authentication, registration, and session management.
 - **configs.py**: Configuration settings for the application, including database and API limits.
 - **requirements.txt**: Python dependencies required to run the project.
 - **serving.py**: FastAPI code to serve the LLM with support for paged attention mechanism.
@@ -32,7 +34,6 @@ Welcome to the **OpenAI-Compatible API with Open-Source LLMs** repository! This 
 ### Prerequisites
 
 - Python 3.9+
-- Azure Communication Service credentials (for email OTP system)
 - Virtual environment
 
 ### Installation Steps
@@ -53,8 +54,6 @@ Welcome to the **OpenAI-Compatible API with Open-Source LLMs** repository! This 
    ```
 4. **Set Up Environment Variables: Create a .env file in the root directory with the following keys**
    ```bash
-   AZURE_EMAIL_COMM_CONN_STR=<connection_string>
-   AZURE_EMAIL_SENDER_ADD=<sender_email_address>
    NGROK_AUTH_TOKEN=<ngrok_auth_token> # Optional
    ```
 5. **Run the Streamlit App: Start the authentication and API key management app**
