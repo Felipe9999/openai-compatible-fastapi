@@ -10,7 +10,7 @@ from pydantic import BaseModel
 import sqlite3
 import configs as cfg
 
-from providers import OllamaProvider, GeminiProvider
+from providers import OllamaProvider, GeminiProvider, VercelProvider
 
 # Initialize Providers
 providers = {}
@@ -26,6 +26,13 @@ if "gemini" in cfg.PROVIDERS:
         base_url=cfg.PROVIDERS["gemini"]["base_url"],
         api_key=cfg.PROVIDERS["gemini"].get("api_key", ""),
         blacklist=cfg.PROVIDERS["gemini"].get("blacklist", [])
+    )
+if "vercel" in cfg.PROVIDERS:
+    providers["vercel"] = VercelProvider(
+        name="vercel",
+        base_url=cfg.PROVIDERS["vercel"]["base_url"],
+        api_key=cfg.PROVIDERS["vercel"].get("api_key", ""),
+        blacklist=cfg.PROVIDERS["vercel"].get("blacklist", [])
     )
 
 class ChatMessage(BaseModel):

@@ -19,5 +19,9 @@ PROVIDERS = {
         "base_url": os.getenv("GEMINI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai/"),
         "api_key": os.getenv("GEMINI_API_KEY", ""),
         "blacklist": os.getenv("GEMINI_BLACKLISTED_MODELS", "").split(',')
+    },
+    "vercel": {
+        "base_url": os.getenv("VERCEL_BASE_URL", "https://ai-gateway.vercel.sh/v1"),
+        "api_key": os.getenv("VERCEL_API_KEY", ""),
     }
 }
